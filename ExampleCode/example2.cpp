@@ -4,7 +4,7 @@
 // Code we wrote in class
 
 #include <iostream>
-#include <string>
+#include <string.h>
 
 using namespace std;
 
