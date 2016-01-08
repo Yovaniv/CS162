@@ -2,7 +2,7 @@
 //Program:		StringDemo
 //Author:		Austin Parrish
 //Date:			01/07/2016
-//Dev Env:		Visual Studio 2012
+//Dev Env:		ICC
 //Description:	
 //========================================================================
 
@@ -11,7 +11,7 @@
 
 //Decalir header files
 #include <iostream>
-#include <string>
+#include <string.h>
 
 //Declair functions
 void cStringDemo();
@@ -51,6 +51,10 @@ void cStringDemo(){
 	}else{
 		cout << "Nice try, but incorrect" << endl;
 	}
+
+	cout << "You name you entered was: " << userName << endl;
+
+
 }
 
 //================================================================
