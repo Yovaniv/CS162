@@ -6,7 +6,7 @@
 //Description:		Ask the user to guess the name, then manipulate
 //			that string in multiple ways
 //========================================================================
-
+// Hello world
 //Remove Micro$oft's training wheels (Windows Only)
 #define _CRT_SECURE_NO_WARNINGS
 
