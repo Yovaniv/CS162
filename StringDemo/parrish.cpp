@@ -10,21 +10,21 @@
 //Remove Micro$oft's training wheels (Windows Only)
 #define _CRT_SECURE_NO_WARNINGS
 
-//Decalir header files
+//Declare header files
 #include <iostream>
 #include <string.h>
 #include <string>
 
-//Declair namespace
+//Declare namespace
 using namespace std;
 
-//Declair functions
+//Declare functions
 void cStringDemo();
 void stringTypeDemo();
 char* removeVowels(char* userString);
 string removeVowels(string userString);
 
-//Declair const
+//Declare const
 const int MAX_STRING_SIZE = 25;
 
 //Main Function
@@ -46,7 +46,7 @@ int main (void){
 // Return value:	Void
 //================================================================
 void cStringDemo(){
-	//Declair vars
+	//Declare vars
 	char myName[15] = "Austin Parrish";
 	char userString[MAX_STRING_SIZE];
 	char userStringBarbarian[MAX_STRING_SIZE + 15];
@@ -66,7 +66,7 @@ void cStringDemo(){
 	//Output what user entered
 	cout << "You guessed " << userString << endl;
 
-	//Remove vowls
+	//Remove vowels
 	cout << "Without vowels, that's " << removeVowels(userString) << endl;
 	
 	//Add the barbarian text next to users name
@@ -84,7 +84,7 @@ void cStringDemo(){
 // Return value:	Void
 //================================================================
 void stringTypeDemo(){
-	//Declair vars
+	//Declare vars
 	string myName = "Austin Parrish";
 	string userString;
 	string userStringBarbarian;
@@ -107,36 +107,36 @@ void stringTypeDemo(){
 	//Output text without vowls
 	cout << "Without vowels, that's " << removeVowels(userString) << endl;
 	
-	//Add bararian text to users name
+	//Add barbarian text to users name
 	userStringBarbarian = userString + " the Barbarian";
 	cout << "And in less civilized times, it would be " << userStringBarbarian << endl;
 }
 
 //================================================================
 // Function:    removeVowels (cString)
-// Description: Removes volwes from a cString
+// Description: Removes vowels from a cString
 // Arguments: 
 // 	userString (I) - the input of the users cString
 // Return value: 
-// 	returns the string with no vowles
+// 	returns the string with no vowels
 //================================================================
 char* removeVowels(char* userString){
-	//Declair vars
-	char vowl[11] = "AaEeIiOoUu";
+	//Declare vars
+	char vowels[11] = "AaEeIiOoUu";
 	bool check=false;
 	static char holder[MAX_STRING_SIZE] = "";
 	int stringCharCount=0;
 
 	//Start a for loop that that will check each character and compare it to
-	//any of the vowls in the vowl cString. We start our for loop by looping
-	//through each charicter in the userString cString
+	//any of the vowels in the vowel cString. We start our for loop by looping
+	//through each character in the userString cString
 	for (int i = 0; i < strlen(userString); i++){
-		//From here, we will loop though each Vowl to see if the current selected
-		//charicter in the cstring is a vowl.
-		for (int j = 0; j < strlen(vowl); j++){
+		//From here, we will loop though each vowel to see if the current selected
+		//character in the c string is a vowel.
+		for (int j = 0; j < strlen(vowels); j++){
 			//We will now compare both the current selected userString char with the 
-			//current selected vowl to see if they match
-			if (userString[i] == vowl[j]){
+			//current selected vowel to see if they match
+			if (userString[i] == vowels[j]){
 				//If they do match, we will set the check bool to true
 				check = true;
 			}
@@ -146,7 +146,7 @@ char* removeVowels(char* userString){
 			holder[stringCharCount]=userString[i];
 			stringCharCount++;
 		}else{
-			//If we do have a vowl, we set the chck back to false and skip to the next charicter
+			//If we do have a vowel, we set the check back to false and skip to the next character
 			check = false;
 		}
 	}
@@ -157,28 +157,28 @@ char* removeVowels(char* userString){
 
 //================================================================
 // Function:    removeVowels (String)
-// Description: Removes volwes from a String
+// Description: Removes vowels from a String
 // Arguments: 
 // 	userString (I) - the input of the users String
 // Return value: 
-// 	returns the string with no vowles
+// 	returns the string with no vowels
 //================================================================
 string removeVowels(string userString){
-	string vowl = "AaEeIiOoUu";
+	string vowels = "AaEeIiOoUu";
 	bool check=false;
 	string holder;
 	int stringCharCount=0;
 
 	//Start a for loop that that will check each character and compare it to
-	//any of the vowls in the vowl cString. We start our for loop by looping
-	//through each charicter in the userString cString
+	//any of the vowel in the vowel String. We start our for loop by looping
+	//through each character in the userString cString
 	for (int i = 0; i < userString.length(); i++){
-		//From here, we will loop though each Vowl to see if the current selected
-		//charicter in the cstring is a vowl.
-		for (int j = 0; j < vowl.length(); j++){
+		//From here, we will loop though each vowel to see if the current selected
+		//character in the c string is a vowel.
+		for (int j = 0; j < vowels.length(); j++){
 			//We will now compare both the current selected userString char with the 
-			//current selected vowl to see if they match
-			if (userString[i] == vowl[j]){
+			//current selected vowel to see if they match
+			if (userString[i] == vowels[j]){
 				//If they do match, we will set the check bool to true
 				check = true;
 			}
@@ -188,7 +188,7 @@ string removeVowels(string userString){
 			holder= holder + userString[i];
 			stringCharCount++;
 		}else{
-			//If we do have a vowl, we set the chck back to false and skip to the next charicter
+			//If we do have a vowel, we set the check back to false and skip to the next character
 			check = false;
 		}
 	}
