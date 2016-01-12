@@ -3,7 +3,8 @@
 //Author:		Austin Parrish
 //Date:			01/07/2016
 //Dev Env:		ICC
-//Description:	
+//Description:		Ask the user to guess the name, then manipulate
+//			that string in multiple ways
 //========================================================================
 
 //Remove Micro$oft's training wheels (Windows Only)
