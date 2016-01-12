@@ -68,10 +68,11 @@ void cStringDemo(){
 	//Remove vowls
 	cout << "Without vowels, that's " << removeVowels(userString) << endl;
 	
-	//
+	//Add the barbarian text next to users name
 	strcpy(userStringBarbarian, userString);
 	strcat(userStringBarbarian, " the Barbarian");
 	
+	//Output text
 	cout << "And in less civilized times, it would be " << userStringBarbarian << endl;
 }
 
@@ -82,24 +83,30 @@ void cStringDemo(){
 // Return value:	Void
 //================================================================
 void stringTypeDemo(){
+	//Declair vars
 	string myName = "Austin Parrish";
 	string userString;
 	string userStringBarbarian;
 
+	//Ask user for name
 	cout << "Say my name (first last): ";
 	cin.get();
 	getline(cin, userString);
-
+	
+	//Check if user was right
 	if (userString==myName){
 		cout << "You smart. You're loyal. You're grateful. I appreciate that. Go buy your mama a house." << endl;
 	}else{
 		cout << "Nice try, but incorrect" << endl;
 	}
-
+	
+	//Output what user said
 	cout << "You guessed " << userString << endl;
-
+	
+	//Output text without vowls
 	cout << "Without vowels, that's " << removeVowels(userString) << endl;
-
+	
+	//Add bararian text to users name
 	userStringBarbarian = userString + " the Barbarian";
 	cout << "And in less civilized times, it would be " << userStringBarbarian << endl;
 }
@@ -184,6 +191,7 @@ string removeVowels(string userString){
 			check = false;
 		}
 	}
-
+	
+	//Once the for loop is complete, we will return whatever we have in our holder
 	return string(holder);
 }
