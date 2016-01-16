@@ -6,8 +6,8 @@ const int MAX_ROWS = 4;
 const int MAX_COLS = 4;
 
 void dumpData(const bool tetrimino[MAX_ROWS][MAX_COLS]);
-void rotateLeft(const bool tetrimino[MAX_ROWS][MAX_COLS]);
-void rotateRight(const bool tetrimino[MAX_ROWS][MAX_COLS]);
+void rotateLeft(bool tetrimino[MAX_ROWS][MAX_COLS]);
+void rotateRight(bool tetrimino[MAX_ROWS][MAX_COLS]);
 
 int main (void){
 	bool tetrimino1[MAX_ROWS][MAX_COLS] = {
@@ -36,8 +36,41 @@ int main (void){
 	dumpData(tetrimino1);
 	cout << "rotated 90 degrees to the right:" << endl;
 	rotateRight(tetrimino1);
+	dumpData(tetrimino1);
 	cout << "rotated 90 degrees to the Left:" << endl;
 	rotateLeft(tetrimino1);
+	rotateLeft(tetrimino1);
+	dumpData(tetrimino1);
+
+	cout << "2nd Array:" << endl;
+	dumpData(tetrimino2);
+	cout << "rotated 90 degrees to the right:" << endl;
+	rotateRight(tetrimino2);
+	dumpData(tetrimino2);
+	cout << "rotated 90 degrees to the Left:" << endl;
+	rotateLeft(tetrimino2);
+	rotateLeft(tetrimino2);
+	dumpData(tetrimino2);
+
+	cout << "3rd Array:" << endl;
+	dumpData(tetrimino3);
+	cout << "rotated 90 degrees to the right:" << endl;
+	rotateRight(tetrimino3);
+	dumpData(tetrimino3);
+	cout << "rotated 90 degrees to the Left:" << endl;
+	rotateLeft(tetrimino3);
+	rotateLeft(tetrimino3);
+	dumpData(tetrimino3);
+
+	cout << "4th Array:" << endl;
+	dumpData(tetrimino4);
+	cout << "rotated 90 degrees to the right:" << endl;
+	rotateRight(tetrimino4);
+	dumpData(tetrimino4);
+	cout << "rotated 90 degrees to the Left:" << endl;
+	rotateLeft(tetrimino4);
+	rotateLeft(tetrimino4);
+	dumpData(tetrimino4);
 }
 
 void dumpData(const bool tetrimino[MAX_ROWS][MAX_COLS]){
@@ -54,7 +87,7 @@ void dumpData(const bool tetrimino[MAX_ROWS][MAX_COLS]){
 }
 
 
-void rotateRight(const bool tetrimino[MAX_ROWS][MAX_COLS]){
+void rotateRight(bool tetrimino[MAX_ROWS][MAX_COLS]){
 	bool holder[MAX_ROWS][MAX_COLS];
 	for (int row = 3; row >= 0; row--){
 		for (int col = 0; col < MAX_COLS; col++){
@@ -65,10 +98,14 @@ void rotateRight(const bool tetrimino[MAX_ROWS][MAX_COLS]){
 			}
 		}
 	}
-	dumpData(holder);
+	for (int i = 0; i < MAX_ROWS; i++){
+		for (int j = 0; j < MAX_COLS; j++){
+			tetrimino[i][j]=holder[i][j];
+		}
+	}
 }
 
-void rotateLeft(const bool tetrimino[MAX_ROWS][MAX_COLS]){
+void rotateLeft(bool tetrimino[MAX_ROWS][MAX_COLS]){
 	bool holder[MAX_ROWS][MAX_COLS];
 	for (int row = 0; row < MAX_ROWS; row++){
 		for (int col = 3; col >= 0; col--){
@@ -79,5 +116,9 @@ void rotateLeft(const bool tetrimino[MAX_ROWS][MAX_COLS]){
 			}
 		}
 	}
-	dumpData(holder);
+	for (int i = 0; i < MAX_ROWS; i++){
+		for (int j = 0; j < MAX_COLS; j++){
+			tetrimino[i][j]=holder[i][j];
+		}
+	}
 }
