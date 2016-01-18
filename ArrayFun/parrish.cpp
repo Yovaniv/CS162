@@ -8,6 +8,7 @@ const int MAX_COLS = 4;
 void dumpData(const bool tetrimino[MAX_ROWS][MAX_COLS]);
 void rotateLeft(bool tetrimino[MAX_ROWS][MAX_COLS]);
 void rotateRight(bool tetrimino[MAX_ROWS][MAX_COLS]);
+void outputData(bool tetrimino[MAX_ROWS][MAX_COLS], int tetriminoNum);
 
 int main (void){
 	bool tetrimino1[MAX_ROWS][MAX_COLS] = {
@@ -32,45 +33,10 @@ int main (void){
 		tetrimino4[i][0] = true;
 	}
 
-	cout << "1st Array:" << endl;
-	dumpData(tetrimino1);
-	cout << "rotated 90 degrees to the right:" << endl;
-	rotateRight(tetrimino1);
-	dumpData(tetrimino1);
-	cout << "rotated 90 degrees to the Left:" << endl;
-	rotateLeft(tetrimino1);
-	rotateLeft(tetrimino1);
-	dumpData(tetrimino1);
-
-	cout << "2nd Array:" << endl;
-	dumpData(tetrimino2);
-	cout << "rotated 90 degrees to the right:" << endl;
-	rotateRight(tetrimino2);
-	dumpData(tetrimino2);
-	cout << "rotated 90 degrees to the Left:" << endl;
-	rotateLeft(tetrimino2);
-	rotateLeft(tetrimino2);
-	dumpData(tetrimino2);
-
-	cout << "3rd Array:" << endl;
-	dumpData(tetrimino3);
-	cout << "rotated 90 degrees to the right:" << endl;
-	rotateRight(tetrimino3);
-	dumpData(tetrimino3);
-	cout << "rotated 90 degrees to the Left:" << endl;
-	rotateLeft(tetrimino3);
-	rotateLeft(tetrimino3);
-	dumpData(tetrimino3);
-
-	cout << "4th Array:" << endl;
-	dumpData(tetrimino4);
-	cout << "rotated 90 degrees to the right:" << endl;
-	rotateRight(tetrimino4);
-	dumpData(tetrimino4);
-	cout << "rotated 90 degrees to the Left:" << endl;
-	rotateLeft(tetrimino4);
-	rotateLeft(tetrimino4);
-	dumpData(tetrimino4);
+	outputData(tetrimino1,1);
+	outputData(tetrimino2,2);
+	outputData(tetrimino3,3);
+	outputData(tetrimino4,4);
 }
 
 void dumpData(const bool tetrimino[MAX_ROWS][MAX_COLS]){
@@ -122,3 +88,29 @@ void rotateLeft(bool tetrimino[MAX_ROWS][MAX_COLS]){
 		}
 	}
 }
+
+void outputData(bool tetrimino[MAX_ROWS][MAX_COLS], int tetriminoNum){
+	switch(tetriminoNum){
+	case 1:
+		cout << tetriminoNum <<"st Array:" << endl;
+		break;
+	case 2:
+		cout << tetriminoNum <<"nd Array:" << endl;
+		break;
+	case 3:
+		cout << tetriminoNum <<"nd Array:" << endl;
+		break;
+	default:
+		cout << tetriminoNum <<"th Array:" << endl;
+	}
+
+	dumpData(tetrimino);
+	cout << "rotated 90 degrees to the right:" << endl;
+	rotateRight(tetrimino);
+	dumpData(tetrimino);
+	cout << "rotated 90 degrees to the Left:" << endl;
+	rotateLeft(tetrimino);
+	rotateLeft(tetrimino);
+	dumpData(tetrimino);
+}
+
